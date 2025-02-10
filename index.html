@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .heart {
+            animation: float 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-black flex justify-center items-center h-screen">
+    <div class="text-center">
+        <!-- Main Text -->
+        <h1 id="mainText" class="text-4xl font-bold text-white mb-8">Do you love me?</h1>
+
+        <!-- Hearts Animation -->
+        <div id="hearts" class="flex justify-center space-x-4 mb-8">
+            <div class="heart w-6 h-6 bg-pink-500 transform rotate-45 relative"></div>
+            <div class="heart w-6 h-6 bg-pink-500 transform rotate-45 relative"></div>
+            <div class="heart w-6 h-6 bg-pink-500 transform rotate-45 relative"></div>
+        </div>
+
+        <!-- Buttons -->
+        <div id="buttons" class="flex justify-center space-x-4">
+            <button id="yesButton" class="px-6 py-2 bg-green-500 text-white rounded-lg shadow-lg hover:bg-green-600 transition-colors">
+                Yes
+            </button>
+            <button id="noButton" class="px-6 py-2 bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-600 transition-colors relative">
+                No
+            </button>
+        </div>
+
+        <!-- Response Message -->
+        <p id="responseMessage" class="text-2xl text-pink-500 font-bold mt-8 hidden">I love you too! ❤️</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
