@@ -11,34 +11,56 @@
             50% { transform: translateY(-10px); }
         }
         .heart {
+            width: 20px;
+            height: 20px;
+            background-color: rgb(254, 94, 137);
+            position: relative;
+            transform: rotate(45deg);
             animation: float 2s infinite;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background-color: rgb(254, 94, 137);
+            border-radius: 50%;
+            position: absolute;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: -10px;
         }
     </style>
 </head>
 <body class="bg-black flex justify-center items-center h-screen">
     <div class="text-center">
         <!-- Main Text -->
-        <h1 id="mainText" class="text-4xl font-bold text-white mb-8">Do you love me?</h1>
+        <h1 id="mainText" class="text-4xl font-bold text-white mb-8">รักเค้ามั้ย ?</h1>
 
         <!-- Hearts Animation -->
         <div id="hearts" class="flex justify-center space-x-4 mb-8">
-            <div class="heart w-6 h-6 bg-pink-500 transform rotate-45 relative"></div>
-            <div class="heart w-6 h-6 bg-pink-500 transform rotate-45 relative"></div>
-            <div class="heart w-6 h-6 bg-pink-500 transform rotate-45 relative"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
+            <div class="heart"></div>
         </div>
 
         <!-- Buttons -->
         <div id="buttons" class="flex justify-center space-x-4">
             <button id="yesButton" class="px-6 py-2 bg-green-500 text-white rounded-lg shadow-lg hover:bg-green-600 transition-colors">
-                Yes
+                รักที่ซู้ดด
             </button>
             <button id="noButton" class="px-6 py-2 bg-red-500 text-white rounded-lg shadow-lg hover:bg-red-600 transition-colors relative">
-                No
+                ม่ายรัก
             </button>
         </div>
 
         <!-- Response Message -->
-        <p id="responseMessage" class="text-2xl text-pink-500 font-bold mt-8 hidden">I love you too!! ❤️</p>
+        <p id="responseMessage" class="text-2xl text-pink-500 font-bold mt-8 hidden">เค้าก็รักชินที่ซู้ดดด !! ❤️</p>
     </div>
     <script src="script.js"></script>
 </body>
